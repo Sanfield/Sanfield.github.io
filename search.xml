@@ -9,11 +9,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F10%2F06%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[手动实现ajax]]></title>
     <url>%2F2018%2F08%2F06%2F%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0ajax%2F</url>
     <content type="text"><![CDATA[代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748function ajax(option)&#123; option=option||&#123;&#125;; option.type=option.type||'get'; option.data=option.data||&#123;&#125;; option.dataType=option.dataType||'text'; let xhr=new XMLHttpRequest(); let arr=[]; for(let name in option.data)&#123; arr.push(`$&#123;encodeURIComponent(name)&#125;=$&#123;encodeURIComponent(option.data[name])&#125;`); &#125; let strData=arr.join('&amp;'); if(option.type=='post')&#123; xhr.open('POST',option.url,true); xhr.setRequestHeader('content-type','application/x-www-form-urlencoded'); xhr.send(strData); &#125;else&#123; xhr.open('GET',option.url+'?'+strData,true); xhr.send(); &#125; //接收 xhr.onreadystatechange=()=&gt;&#123; if(xhr.readyState==4)&#123; if(xhr.status&gt;=200 &amp;&amp; xhr.status&lt;300 ||xhr.status==304)&#123; let data=xhr.responseText; switch(option.dataType)&#123; case 'json': if(window.JSON &amp;&amp; JSON.parse)&#123; data=JSON.parse(data); &#125;else&#123; data=eval('('+str+')'); &#125; break; case 'xml': data=xhr.responseXML; break; &#125; option.success &amp;&amp; option.success(data); &#125;else&#123; options.error &amp;&amp; options.error(); &#125; &#125; &#125;&#125;]]></content>
@@ -26,5 +21,10 @@
         <tag>AJAX</tag>
         <tag>XHR</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F08%2F04%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
