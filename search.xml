@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F09%2Fjs%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[12345678910function a()&#123; var i=0; function b()&#123; console.log(++i); &#125; return b;&#125;var c=a();c(); 这样在执行完var c=a()后，变量c实际上是指向了函数b，再执行c()后就会弹出一个窗口显示i的值(第一次为1)。这段代码其实就创建了一个闭包，为什么？因为函数a外的变量c引用了函数a内的函数b，就是说：当函数a的内部函数b被函数a外的一个变量引用的时候，就创建了一个闭包。 闭包的作用 在a执行完后并返回，闭包使得JavaScript的垃圾回收机制GC不会收回a所占的资源，因为a的内部函数b的执行需要依赖a中的变量下面是一个经典的闭包利用12345678910111213for(var j=0;j&lt;5;j++)&#123; (function(j)&#123; setTimeout(function()&#123; console.log(j); &#125;,1000); &#125;)(j)&#125;console.log(`--------------`);for(var i=0;i&lt;=5;i++)&#123; ((i)=&gt;&#123;setTimeout(()=&gt; console.log(i),1000); &#125;)(i);&#125;]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[win-server升级mysql]]></title>
+    <url>%2F2018%2F10%2F13%2Fwin-server%E5%8D%87%E7%BA%A7mysql%2F</url>
+    <content type="text"><![CDATA[先备份原来的数据库在mysql的安装目录下 cd bin执行:mysqldump -uroot -p –all-databases &gt; sqlfile.sql输入密码:可以在bin目录下找到sqlfile.sql文件，保存该文件。 安装1.下载地址：https://dev.mysql.com/downloads/mysql/5.7.html#2.下载后可以把解压的内容随便放到一个目录，我的是如下目录（放到C盘的话，可能在修改ini文件时涉及权限问题，之后我就改放E盘了）：E:\mysql如下图：此时加压后的文件中没有data目录和ini文件3.在E:\mysql目录下新建my.ini文件，复制如下内容[mysqld]设置3306端port = 3306设置mysql的安装目录basedir=E:\mysql设置mysql数据库的数据的存放目录datadir=E:\mysql\data允许最大连接数max_connections=200服务端使用的字符集默认为8比特编码的latin1字符集character-set-server=utf8创建新表时将使用的默认存储引擎default-storage-engine=INNODBsql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES[mysql]设置mysql客户端默认字符集default-character-set=ut]]></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[测是]]></title>
     <url>%2F2018%2F10%2F09%2F%E6%B5%8B%E6%98%AF%2F</url>
     <content type="text"><![CDATA[好久不见立个flag]]></content>
