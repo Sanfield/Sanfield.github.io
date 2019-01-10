@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常见的数据交互]]></title>
+    <url>%2F2018%2F11%2F01%2FJSONP%E5%92%8Curlencode%2F</url>
+    <content type="text"><![CDATA[这几天在项目中用到的一些数据传输问题 ajax cors跨域cors跨域很简单，也是官方推荐的方法1response.setHeader(“Access-Control-Allow-Origin”, “*”); CORS方案实现非常简单，只要服务在头部标明允许跨域访问即可。但是这个方案由于推出时间较晚，所以IE9及以下浏览器并没有支持这个机制。IE9及以下浏览器在安全设置里控制是否允许跨域数据访问： JOSNPjosnp 属于民间开发者自己搞的方法，其原理是 动态创建srcipt标签支持目前所有浏览器，只是在实现方式上需要前后端代码有一点约定配合。但是，要注意由于JSONP是以script标签的src属性加载的，因此参数会收到URL长度的限制，只能适用于传入参数内容不多的场景。典型应用：百度搜索输入框获取下拉框 123456789101112131415161718192021222324252627&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;script&gt; function show(data)&#123; alert(data.s); &#125; window.onload=function()&#123; let oTxt= document.getElementById("in"); oTxt.oninput=function()&#123; let secrpt= document.createElement('script'); secrpt.src=`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=$&#123;encodeURIComponent(oTxt.value)&#125;&amp;cb=show` document.head.appendChild(secrpt); &#125; &#125; &lt;/script&gt;&lt;/head&gt;&lt;body&gt; &lt;input type="text" name="" id="in"&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>数据交互</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>XHR</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[win-server升级mysql]]></title>
     <url>%2F2018%2F10%2F13%2Fwin-server%E5%8D%87%E7%BA%A7mysql%2F</url>
     <content type="text"><![CDATA[先备份原来的数据库在mysql的安装目录下 cd bin执行:mysqldump -uroot -p –all-databases &gt; sqlfile.sql输入密码:可以在bin目录下找到sqlfile.sql文件，保存该文件。 安装1.下载地址：https://dev.mysql.com/downloads/mysql/5.7.html#2.下载后可以把解压的内容随便放到一个目录，我的是如下目录（放到C盘的话，可能在修改ini文件时涉及权限问题，之后我就改放E盘了）：E:\mysql如下图：此时加压后的文件中没有data目录和ini文件3.在E:\mysql目录下新建my.ini文件，复制如下内容[mysqld]设置3306端port = 3306设置mysql的安装目录basedir=E:\mysql设置mysql数据库的数据的存放目录datadir=E:\mysql\data允许最大连接数max_connections=200服务端使用的字符集默认为8比特编码的latin1字符集character-set-server=utf8创建新表时将使用的默认存储引擎default-storage-engine=INNODBsql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES[mysql]设置mysql客户端默认字符集default-character-set=ut]]></content>
@@ -39,9 +52,9 @@
         <category>数据交互</category>
       </categories>
       <tags>
+        <tag>XHR</tag>
         <tag>ES6</tag>
         <tag>AJAX</tag>
-        <tag>XHR</tag>
       </tags>
   </entry>
   <entry>
