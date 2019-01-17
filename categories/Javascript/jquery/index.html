@@ -82,7 +82,7 @@
 <meta name="description" content="get busy living or get busy dying">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sanfield Blog">
-<meta property="og:url" content="http://yoursite.com/categories/javascript/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/javascript/jquery/index.html">
 <meta property="og:site_name" content="Sanfield Blog">
 <meta property="og:description" content="get busy living or get busy dying">
 <meta property="og:locale" content="zh-Hans">
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/javascript/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/javascript/jquery/"/>
 
 
 
 
 
-  <title>分类: javascript | Sanfield Blog</title>
+  <title>分类: jquery | Sanfield Blog</title>
   
 
 
@@ -288,7 +288,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>javascript<small>分类</small>
+        <h1>jquery<small>分类</small>
         </h1>
       </div>
 
@@ -859,87 +859,6 @@
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-ht.searchTextCount) {
                   return resultRight.searchTextCount - resultLeft.searchTextCount;
                 } else if (resultLeft.hitCount !== resultRight.hitCount) {
                   return resultRight.hitCount - resultLeft.hitCount;

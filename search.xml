@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[手动实现jquery]]></title>
+    <url>%2F2019%2F01%2F17%2F%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0jquery%2F</url>
+    <content type="text"><![CDATA[目前jQuery生存空间越来越小，但是在实际的生产项目由于历史遗留问题jquery仍然被大量使用。这几天在歇息时仔细看看了它的实现，发现里面还是有很多值得我学习的地方，对理解js基础知识以及编程思路有很大的帮助。 首先jq它为我们只提供了一个JQuery和$两个入口函数，并且在加载完后就能引用，所以最外层肯定和其他框架一样是一个立即执行函数。看代码123456(function(windown)&#123; function jQuery(selector)&#123; &#125; window.$ = window.jQuery = jQuery;&#125;)(windown) 这样就可以给用户提供一个jQuery函数了，并且把选择器当成参数传进去 函数内部拿到了选择器，接下来就要拿到 dom对象，然后改变对象的属性了。Jquery并没有在Jquery函数中直接获取，而是在另外一个函数获取。具体看代码1234567891011121314151617181920(function(window)&#123; function Fn(selector)&#123; &#125; Fn.prototype = &#123; init(selector)&#123; var elements = document.querySelectorAll(selector); for( var i = 0 ; i &lt; elements.length ; i++ )&#123; this[i] = elements[i]; this.length++; &#125; &#125;, length : 0 &#125; function jQuery(selector)&#123; return new Fn(selector) &#125; window.$ = window.jQuery = jQuery; &#125;)(window) 怎么样是不是很巧妙，这样就可以在函数内部形成高内聚和不浪费运行内存的形式。]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>jquery</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS日期相加减]]></title>
     <url>%2F2018%2F11%2F17%2FJS%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%8A%A0%E5%87%8F%2F</url>
     <content type="text"><![CDATA[Js中时间相加减因为有时候从后台传过来的时间，不能直接进行运算。所以我们需要进行格式转化后进行相加减。我后台的格式如下： yyyy-mm-dd hh24:mi后在前台需要进行如下转换:12345678910var dayTime=updateTime.split(" "); var day=dayTime[0].split("-"); var time=dayTime[1].split(":"); var oldTime=new Date(Number(day[0]),(Number(day[1])-1),Number(day[2]),Number(time[0]),Number(time[1]),0); var newTime= new Date(); var iDays = Math.floor((newTime - oldTime) / 86400000); if(iDays&gt;5)&#123; mx.indicate ("info", "只能撤回发布5天之内的方案！"); return; &#125; 如上是连个日期相减，日期加的话在新日期生成的时候直接在构造函数内相加。下面是日期加五天的例子：1var newime=new Date(Number(day[0]),(Number(day[1])+5),Number(day[2]),Number(time[0]),Number(time[1]),0);]]></content>
@@ -20,8 +32,8 @@
         <category>Javascript</category>
       </categories>
       <tags>
-        <tag>ES6</tag>
         <tag>JS</tag>
+        <tag>ES6</tag>
       </tags>
   </entry>
   <entry>
@@ -76,8 +88,8 @@
         <category>数据交互</category>
       </categories>
       <tags>
-        <tag>XHR</tag>
         <tag>ES6</tag>
+        <tag>XHR</tag>
         <tag>AJAX</tag>
       </tags>
   </entry>
