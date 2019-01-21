@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2019%2F01%2F19%2F1%2F</url>
-    <content type="text"><![CDATA[var reg =/./; console.log( reg.test('a'));]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[手动实现jquery]]></title>
-    <url>%2F2019%2F01%2F17%2F%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0jquery%2F</url>
-    <content type="text"><![CDATA[目前jQuery生存空间越来越小，但是在实际的生产项目由于历史遗留问题jquery仍然被大量使用。这几天在歇息时仔细看看了它的实现，发现里面还是有很多值得我学习的地方，对理解js基础知识以及编程思路有很大的帮助。 首先jq它为我们只提供了一个JQuery和$两个入口函数，并且在加载完后就能引用，所以最外层肯定和其他框架一样是一个立即执行函数。看代码123456(function(windown)&#123; function jQuery(selector)&#123; &#125; window.$ = window.jQuery = jQuery;&#125;)(windown) 这样就可以给用户提供一个jQuery函数了，并且把选择器当成参数传进去 函数内部拿到了选择器，接下来就要拿到 dom对象，然后改变对象的属性了。Jquery并没有在Jquery函数中直接获取，而是在另外一个函数获取。具体看代码1234567891011121314151617181920(function(window)&#123; function Fn(selector)&#123; &#125; Fn.prototype = &#123; init(selector)&#123; var elements = document.querySelectorAll(selector); for( var i = 0 ; i &lt; elements.length ; i++ )&#123; this[i] = elements[i]; this.length++; &#125; &#125;, length : 0 &#125; function jQuery(selector)&#123; return new Fn(selector) &#125; window.$ = window.jQuery = jQuery; &#125;)(window) 怎么样是不是很巧妙，这样就可以在函数内部形成高内聚和不浪费运行内存的形式。]]></content>
-      <categories>
-        <category>javascript</category>
-        <category>jquery</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[手动实现jquery2]]></title>
     <url>%2F2018%2F11%2F18%2F%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0jquery2%2F</url>
     <content type="text"><![CDATA[仔细看了看，上次的jquery源码不太对，jquery的作者并不是这样写的，原谅我的不仔细。这样写的话如果获取到dom元素后，在加$().css,等方法时，会造成一个极大的内存浪费。源码是这样的12345678910111213141516171819202122232425262728293031(function(global)&#123; function jQuery(selector)&#123; return new jQuery.fn.init(selector); &#125; jQuery.fn = jQuery.prototype = &#123; constructor:jQuery, init:function(selector)&#123; if(jQuery.type(selector)==="string")&#123; //选择器 const elements = document.querySelectorAll(selector) for(let i = 0;i&lt;elements.length;i++)&#123; this[i] = elements[i]; &#125; this.length=elements.length; &#125;else if( selector.nodeType )&#123; //DOM元素 this[0] = selector; this.length = 1; &#125; &#125; &#125; jQuery.fn.init.prototype = jQuery.fn; global.$ = global.jQuery = jQuery;&#125;)(window)]]></content>
@@ -39,6 +22,18 @@
       <tags>
         <tag>JS</tag>
         <tag>格式转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[手动实现jquery]]></title>
+    <url>%2F2018%2F11%2F17%2F%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0jquery%2F</url>
+    <content type="text"><![CDATA[目前jQuery生存空间越来越小，但是在实际的生产项目由于历史遗留问题jquery仍然被大量使用。这几天在歇息时仔细看看了它的实现，发现里面还是有很多值得我学习的地方，对理解js基础知识以及编程思路有很大的帮助。 首先jq它为我们只提供了一个JQuery和$两个入口函数，并且在加载完后就能引用，所以最外层肯定和其他框架一样是一个立即执行函数。看代码123456(function(windown)&#123; function jQuery(selector)&#123; &#125; window.$ = window.jQuery = jQuery;&#125;)(windown) 这样就可以给用户提供一个jQuery函数了，并且把选择器当成参数传进去 函数内部拿到了选择器，接下来就要拿到 dom对象，然后改变对象的属性了。Jquery并没有在Jquery函数中直接获取，而是在另外一个函数获取。具体看代码1234567891011121314151617181920(function(window)&#123; function Fn(selector)&#123; &#125; Fn.prototype = &#123; init(selector)&#123; var elements = document.querySelectorAll(selector); for( var i = 0 ; i &lt; elements.length ; i++ )&#123; this[i] = elements[i]; this.length++; &#125; &#125;, length : 0 &#125; function jQuery(selector)&#123; return new Fn(selector) &#125; window.$ = window.jQuery = jQuery; &#125;)(window) 怎么样是不是很巧妙，这样就可以在函数内部形成高内聚和不浪费运行内存的形式。]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>jquery</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
