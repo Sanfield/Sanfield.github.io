@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[两数之和]]></title>
+    <url>%2F2018%2F12%2F01%2F%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[从今天开始从新学习一遍数据结构，并开始leetcode学习之旅给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。示例: 给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]思路： 暴力破解时间复杂度为O(N*N) 哈希表时间复杂度为O(N)下面是我的个人写法，仅作参考。123456789101112131415public class TowSum &#123; public int[] twoSum(int[] numbers, int target) &#123; HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;(); int[] result= new int[2]; for(int i=0;i&lt;numbers.length;i++)&#123; if(map.get(target-numbers[i])!=null)&#123; result[0]= map.get(target-numbers[i])+1; result[1]=i+1; &#125;else&#123; map.put(numbers[i],i); &#125; &#125; return result; &#125;&#125;]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[手动实现jquery2]]></title>
     <url>%2F2018%2F11%2F18%2F%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0jquery2%2F</url>
     <content type="text"><![CDATA[仔细看了看，上次的jquery源码不太对，jquery的作者并不是这样写的，原谅我的不仔细。这样写的话如果获取到dom元素后，在加$().css,等方法时，会造成一个极大的内存浪费。源码是这样的12345678910111213141516171819202122232425262728293031(function(global)&#123; function jQuery(selector)&#123; return new jQuery.fn.init(selector); &#125; jQuery.fn = jQuery.prototype = &#123; constructor:jQuery, init:function(selector)&#123; if(jQuery.type(selector)==="string")&#123; //选择器 const elements = document.querySelectorAll(selector) for(let i = 0;i&lt;elements.length;i++)&#123; this[i] = elements[i]; &#125; this.length=elements.length; &#125;else if( selector.nodeType )&#123; //DOM元素 this[0] = selector; this.length = 1; &#125; &#125; &#125; jQuery.fn.init.prototype = jQuery.fn; global.$ = global.jQuery = jQuery;&#125;)(window)]]></content>
@@ -57,8 +69,8 @@
         <category>数据交互</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>XHR</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -101,8 +113,8 @@
       </categories>
       <tags>
         <tag>ES6</tag>
-        <tag>XHR</tag>
         <tag>AJAX</tag>
+        <tag>XHR</tag>
       </tags>
   </entry>
   <entry>
