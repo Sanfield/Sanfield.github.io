@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[快速搭建RN开发环境]]></title>
+    <url>%2F2019%2F02%2F21%2F%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BARN%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[ReactNative 快速开始学习使用 ReactNative 最令人头疼的就是环境问题，因为大多数 Web 开发者，并不熟悉 Android 与 IOS 的开发环境，配置起来比较繁琐。当然 Android 程序员也不熟悉 IOS 环境，反之亦然，这导致很多人因为繁杂的开发环境而放弃学习或者暂时搁浅。 为了改善这个问题，一个快速的开发环境解决方案应运而生。这个方案需要两个工具：1. create-react-native-app 2. Expo。 create-react-native-app这是一款用来创建 ReactNative 项目的脚手架工具。特点是无需配置繁杂的 Android 或 IOS 开发环境，便可进行原生应用的开发，极大简化了环境搭建与配置的过程，很适合学习使用。 [参考文档] https://reactnative.cn/docs/getting-started.html [替代方案] https://facebook.github.io/react-native/docs/getting-started.html 安装12345# 安装npm install -g create-react-native-app# 检测，文档更新时最新版本2.0.2create-react-native-app --version 使用123456# 创建项目create-react-native-app projectName# 启动项目cd projectNameexpo start Expo这是一款安装在手机上的应用，专门负责运行上述方式构建的 App，这有点像是微信里面运行的小程序。IOS 可以到 AppStore 里面搜索下载，Android 可以到 GooglePlay 里面搜索下载，也可以到 Github 里下载。 [Github] https://github.com/expo/expo 真机运行准备工作：使用create-react-native-app创建一个项目，然后手机安装Expo应用，并确保手机与开发机处于同一局域网下。 项目运行：npm start启动项目，打开Expo应用，使用里面的扫一扫功能，扫描项目启动后生成的巨大二维码，等待JS打包传输完毕，就会在手机上运行。 IP错误问题因为开发机可能会有多个ip地址，比如以太网IP、虚拟IP、无线局域网IP等等。当项目启动时通常会无脑的选择IP列表中的第一个，假如是以太网IP，那么就与手机所处的无线局域网不同，造成网络连接失败。 下面是这种情况的图例，项目启动时使用的是IP列表中的第一个94 IP，并没有使用无线局域网IP。 如果发生这种情况，先Ctrl+C停掉项目，设置一个环境变量，然后再重启项目即可。 [参考解决方案] https://github.com/react-community/create-react-native-app/blob/d01ddabb634532200629c6d17f920eb856fa6416/react-native-scripts/template/README.md#environment-variables [参考解决方案] https://github.com/react-community/create-react-native-app/issues/270 12345# 设置环境变量set REACT_NATIVE_PACKAGER_HOSTNAME=my-custom-ip-address-or-hostname# 重启项目npm start 开发初体验 在项目根目录下有个 App.js , 是应用的根组件, 我们手机上看到的内容就是这个组件实现的 尝试修改 App.js 中的文本内容, 然后手机摇一摇, 点击 Reload 选项即可更新修改内容 也可尝试给文本添加新的样式 12345678910111213141516171819202122232425import React from 'react';import &#123; StyleSheet, Text, View &#125; from 'react-native';// 导出根组件, 组件的定于语法与之前学习的一样export default class App extends React.Component &#123; render() &#123; return ( // 返回的视图需要使用View组件包裹, 作用相当于Div标签 &lt;View style=&#123;styles.container&#125;&gt; &#123;/* 文本内容使用Text组件包裹, 作用相当于P标签 */&#125; &lt;Text&gt;Open up App.js to start working on your app!&lt;/Text&gt; &lt;/View&gt; ); &#125;&#125;// 定义样式, 这里的尺寸大小无需加单位, 元素可以通过数组引用多个样式, 后面的样式优先级比前面的高const styles = StyleSheet.create(&#123; container: &#123; flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center', &#125;,&#125;); 错误提示 - 红屏和黄屏RN代码运行时会把错误分为红屏和黄屏两种，红屏会以全屏红色显示在应用中，导致程序无法正常运行，红屏通常是编码错误导致的，必须修复。 黄屏代表警告，会显示在应用下方，不影响程序运行，不修复也可以，警告可以通过代码禁止。 红屏和黄屏只在debug版本中才会显示，在rellease版本中不会。一般情况下，通过RN红屏中的错误提示信息，就可以定位问题，如果是语法等常见运行错误，RN也会给出错误代码所在位置与行数，所以出现红屏一定要阅读描述信息。 123456// 频闭黄色警告，参数为一个数组：数组中的字符串就是要屏蔽的警告的开头的内容。YellowBox.ignoreWarnings(['Warning: ']);// 手动触发红屏和警告console.error("严重错误");console.warn("警告"); 调试菜单React-Native开发调试没有本地代码方便，但也是可以调的，在调试菜单中可以进行开发调试相关的配置。调试菜单只在debug版本中可以被调出，如果是模拟器环境，Windows平台按window+m可调出，也可能是F1或F2，Mac平台按commond+m可调出，或者发送adb shell input keyevent 82指令。如果是真机，摇一摇就可以调出调试菜单。 调试菜单说明 Reload: 重新加载整个页面 Debug JS Remotely: 启动远程调试, 会自动打开chrome浏览器, 然后可在开发者工具中调试js Enable Live Reload: 开启自动加载, 代码变动会自动更新整个页面 Enable Hot Reloading: 热更新, 代码变动自动的进行局部更新 Dev Sttings: 开发调试配置]]></content>
+      <categories>
+        <category>es6</category>
+        <category>react-natives</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[axios的配置和使用]]></title>
     <url>%2F2019%2F01%2F28%2Faxios%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[这几天大佬让我把项目的ajax全部换成axois，接到任务时，我内心深处第一反应是两个字**,因为由于历史问题…..。哎，程序员怎么能说不能，干吧。之前只是了解过，但是也没实际用过，趁着这次也用用。在网上找了找，发现并不复杂。来吧，照着官网来。 安装 npm install axios 引用 import axios from ‘axios’ 挂载在vue原型上 Vue.proptotype.$axios=axois; 调用12345this.$axios.get('xxxxx').then(res=&gt;&#123; //TODO&#125;).catch(err=&gt;console.log(err)); 到目前，我们的axios已经可以成功运行了，尝试发了一个请求，已经能接受到请求了。接下来就是 做一些利国利民的事情了。 设置基本路径 axios.defaults.baseURL=’http://sanfield.github.io&#39; 设置拦截器 请求发起之前 1234567891011// 定义拦截器// 1: 请求发起前显示loading open();Axios.interceptors.request.use(function(config) &#123; // 不变配置: 可变，可以设置公共的请求头操作 MintUI.Indicator.open(&#123; text: '玩儿命加载中...', spinnerType: 'fading-circle' &#125;); // console.log(config); return config; // config:&#123; headers&#125;&#125;) 接收到相应后123456789// 2: 响应回来后关闭loading close()Axios.interceptors.response.use(function(response) &#123; //reponse: &#123; config:&#123; &#125;,data:&#123;&#125; ,headers &#125; // 接收响应头或者响应体中的数据，保存起来，供请求的拦截器中使用头信息操作 MintUI.Indicator.close(); // console.log(response); return response;&#125;) 经过上面一系列操作，我们的axios已经可以进行生产使用了，好了我要挨个解决历史问题了。]]></content>
@@ -149,9 +161,9 @@
         <category>数据交互</category>
       </categories>
       <tags>
-        <tag>XHR</tag>
         <tag>ES6</tag>
         <tag>AJAX</tag>
+        <tag>XHR</tag>
       </tags>
   </entry>
   <entry>
