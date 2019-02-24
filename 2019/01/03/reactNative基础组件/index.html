@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JS,ES6," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="#AMD CMD，CommonJs和ES6的区别  AMDAMD 即Asynchronous Module Definition，中文名是异步模块定义的意思。它是一个在浏览器端模块化开发的规范由于不是JavaScript原生支持，使用AMD规范进行页面开发需要用到对应的库函数，也就是大名鼎鼎RequireJS，实际上AMD 是 RequireJS 在推广过程中对模块定义的规范化的产出require">
-<meta name="keywords" content="JS,ES6">
+<meta name="description" content="内置组件 在 React Native 中你需要使用官方提供的组件进行应用构建 因为是开发原生应用, 我们的代码最终会转为原生组件的方式渲染, 所以你不会看到任何以 html 标签命名的组件 [官方文档] https://facebook.github.io/react-native/docs/getting-started  View 视图容器，作用相当于 html 的 div 标签，它是创建U">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AMD和CMD">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/AMD和CMD/index.html">
+<meta property="og:title" content="reactNative基础组件">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/reactNative基础组件/index.html">
 <meta property="og:site_name" content="Sanfield Blog">
-<meta property="og:description" content="#AMD CMD，CommonJs和ES6的区别  AMDAMD 即Asynchronous Module Definition，中文名是异步模块定义的意思。它是一个在浏览器端模块化开发的规范由于不是JavaScript原生支持，使用AMD规范进行页面开发需要用到对应的库函数，也就是大名鼎鼎RequireJS，实际上AMD 是 RequireJS 在推广过程中对模块定义的规范化的产出require">
+<meta property="og:description" content="内置组件 在 React Native 中你需要使用官方提供的组件进行应用构建 因为是开发原生应用, 我们的代码最终会转为原生组件的方式渲染, 所以你不会看到任何以 html 标签命名的组件 [官方文档] https://facebook.github.io/react-native/docs/getting-started  View 视图容器，作用相当于 html 的 div 标签，它是创建U">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-15T14:38:58.639Z">
+<meta property="og:updated_time" content="2019-02-24T04:07:17.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AMD和CMD">
-<meta name="twitter:description" content="#AMD CMD，CommonJs和ES6的区别  AMDAMD 即Asynchronous Module Definition，中文名是异步模块定义的意思。它是一个在浏览器端模块化开发的规范由于不是JavaScript原生支持，使用AMD规范进行页面开发需要用到对应的库函数，也就是大名鼎鼎RequireJS，实际上AMD 是 RequireJS 在推广过程中对模块定义的规范化的产出require">
+<meta name="twitter:title" content="reactNative基础组件">
+<meta name="twitter:description" content="内置组件 在 React Native 中你需要使用官方提供的组件进行应用构建 因为是开发原生应用, 我们的代码最终会转为原生组件的方式渲染, 所以你不会看到任何以 html 标签命名的组件 [官方文档] https://facebook.github.io/react-native/docs/getting-started  View 视图容器，作用相当于 html 的 div 标签，它是创建U">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/15/AMD和CMD/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/03/reactNative基础组件/"/>
 
 
 
 
 
-  <title>AMD和CMD | Sanfield Blog</title>
+  <title>reactNative基础组件 | Sanfield Blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/AMD和CMD/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/reactNative基础组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sanfield">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AMD和CMD</h1>
+          <h1 class="post-title" itemprop="name headline">reactNative基础组件</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T23:13:16+08:00">
-                2018-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T22:03:08+08:00">
+                2019-01-03
               </time>
             
 
@@ -349,8 +349,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/react-natives/" itemprop="url" rel="index">
+                    <span itemprop="name">react-natives</span>
                   </a>
                 </span>
 
@@ -386,34 +397,27 @@
       
 
       
-        <p>#AMD CMD，CommonJs和ES6的区别</p>
-<ul>
-<li><p>AMD<br>AMD 即Asynchronous Module Definition，中文名是异步模块定义的意思。它是一个在浏览器端模块化开发的规范<br>由于不是JavaScript原生支持，使用AMD规范进行页面开发需要用到对应的库函数，也就是大名鼎鼎RequireJS，实际上AMD 是 RequireJS 在推广过程中对模块定义的规范化的产出requireJS主要解决两个问题:  </p>
-<ol>
-<li>多个js文件可能有依赖关系，被依赖的文件需要早于依赖它的文件加载到浏览器  </li>
-<li>js加载的时候浏览器会停止页面渲染，加载文件越多，页面失去响应时间越长<br>看一个使用requireJS的例子：  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义模块MyModule</span></span><br><span class="line">define([<span class="string">'dependency'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">'Byron'</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">printName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        printName: printName</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载模块</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">'myModule'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">my</span>)</span>&#123;</span><br><span class="line">　 my.printName();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><blockquote>
-<p>requireJS定义了一个函数 define，它是全局变量，用来定义模块<br>define(id?, dependencies?, factory);<br>id：可选参数，用来定义模块的标识，如果没有提供该参数，脚本文件名（去掉拓展名）<br>dependencies：是一个当前模块依赖的模块名称数组<br>factory：工厂方法，模块初始化要执行的函数或对象。如果为函数，它应该只被执行一次。如果是对象，此对象应该为模块的输出值<br>在页面上使用require函数加载模块  </p>
-</blockquote>
-</li>
+        <h2 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h2><ul>
+<li>在 <code>React Native</code> 中你需要使用官方提供的<code>组件</code>进行应用构建</li>
+<li>因为是开发<code>原生</code>应用, 我们的代码最终会<code>转为</code>原生组件的方式渲染, 所以你不会看到任何以 <code>html</code> 标签命名的组件</li>
+<li>[官方文档] <a href="https://facebook.github.io/react-native/docs/getting-started" target="_blank" rel="noopener">https://facebook.github.io/react-native/docs/getting-started</a></li>
 </ul>
-<blockquote>
-<p>require([dependencies], function(){});<br>require()函数接受两个参数<br>第一个参数是一个数组，表示所依赖的模块<br>第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。加载的模块会以参数形式传入该函数，从而在回调函数内部就可以使用这些模块<br>require()函数在加载依赖的函数的时候是异步加载的，这样浏览器不会失去响应，它指定的回调函数，只有前面的模块都加载成功后，才会运行，解决了依赖性的问题。 </p>
-<ul>
-<li>CMD(Common Module Definition)<br>淘宝团队提供，就近依赖，同步概念即用即加载模块  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义模块  myModule.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery.js'</span>)</span><br><span class="line">  $(<span class="string">'div'</span>).addClass(<span class="string">'active'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载模块</span></span><br><span class="line">seajs.use([<span class="string">'myModule.js'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">my</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
+<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><ul>
+<li>视图容器，作用相当于 <code>html</code> 的 <code>div</code> 标签，它是创建UI所需的最基础组件，支持Flexbox布局、样式、触摸事件，它可以放到其它视图中，也可以包含任意多个任意子视图。</li>
+<li><a href="https://reactnative.cn/docs/view/" target="_blank" rel="noopener">https://reactnative.cn/docs/view/</a></li>
 </ul>
-</blockquote>
-<ul>
-<li><p>CommonJs规范，module.exprts<br>与nodeJs采用的规范一致<br>话不多说，上代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">exports.area=<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI*r*r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.circumference=<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span>*<span class="built_in">Math</span>.PI*r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>ES6特性 export/import<br>成对出现，有导出才有导入</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//lib.js</span></span><br><span class="line"><span class="comment">//导出常量</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> sqrt = <span class="built_in">Math</span>.sqrt;</span><br><span class="line"><span class="comment">//导出函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//导出函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">diag</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sqrt(square(x) + square(y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; square, diag &#125; <span class="keyword">from</span> <span class="string">'./lib'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(square(<span class="number">11</span>)); <span class="comment">// 121</span></span><br><span class="line"><span class="built_in">console</span>.log(diag(<span class="number">4</span>, <span class="number">3</span>)); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; StyleSheet, View, Text, Button &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewTest</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &#123;<span class="comment">/* View标签相当于div，可以嵌套 */</span>&#125;</span><br><span class="line">            &lt;View style=&#123;style.container&#125;&gt;</span><br><span class="line">                &lt;View&gt;</span><br><span class="line">                    &lt;Text&gt;React Native&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>View&gt;</span><br><span class="line">                &lt;View&gt;</span><br><span class="line">                    &lt;Text&gt;使用React编写&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;Text&gt;使用JSX编写&lt;/</span>Text&gt;</span><br><span class="line">                &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 注意border、background等样式不能简写，必须一个一个的设置属性</span></span><br><span class="line"><span class="keyword">let</span> style = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        width: <span class="number">300</span>,</span><br><span class="line">        padding: <span class="number">10</span>,</span><br><span class="line">        borderStyle: <span class="string">"dashed"</span>,</span><br><span class="line">        borderWidth: <span class="number">2</span>,</span><br><span class="line">        borderColor: <span class="string">"red"</span>,</span><br><span class="line">        borderRadius: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    text: &#123;</span><br><span class="line">        fontSize: <span class="number">20</span>,</span><br><span class="line">        color: <span class="string">"yellow"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h3><ul>
+<li>文本容器，作用相当于 <code>html</code> 的 <code>span</code> 标签，为什么不是 <code>p</code> 标签呢，一会演示。Text标签支持嵌套、触摸事件。在RN中，文本必须放置到Text中才可以被渲染，否则报错。</li>
+<li>注意: 除了Text外, 别的组件内都不能包含文本</li>
+<li><a href="https://reactnative.cn/docs/text/" target="_blank" rel="noopener">https://reactnative.cn/docs/text/</a></li>
 </ul>
+<p>文本布局</p>
+<p>Text采用的是文本布局，多个子文本在渲染时会折叠合并在一起，如果把View理解成块级元素，那么Text就可以理解为行内元素。<br></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; StyleSheet, View, Text &#125; <span class="keyword">from</span> <span class="string">"react-native"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">TextTest</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="comment">// 可以嵌套</span></span><br><span class="line">            &lt;Text&gt;</span><br><span class="line">            </span><br><span class="line">                &lt;Text&gt;饿了吗&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">                &lt;Text&gt;美图&lt;/</span>Text&gt;</span><br><span class="line">            &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>文本样式</strong></p>
+<p>在RN中，父文本的样式可以传递给后代文本，也就是样式继承。但是除了文本之外其它组件都无法继承样式。<br></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;Text style=&#123;style.rootText&#125;&gt;</span><br><span class="line">            &lt;Text&gt;饿了吗&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Text&gt;美图&lt;/</span>Text&gt;</span><br><span class="line">            &#123;<span class="comment">/* 文本样式继承 */</span>&#125;</span><br><span class="line">            &lt;Text&gt;</span><br><span class="line">                &lt;Text&gt;滴滴外卖&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>Text&gt;</span><br><span class="line">        &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">let style = StyleSheet.create(&#123;</span></span><br><span class="line"><span class="regexp">    rootText: &#123;</span></span><br><span class="line"><span class="regexp">        fontSize: 20,</span></span><br><span class="line"><span class="regexp">        color: "blue",</span></span><br><span class="line"><span class="regexp">        lineHeight: 24</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -431,9 +435,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
-          
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -446,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/01/JSONP和urlencode/" rel="next" title="常见的数据交互">
-                <i class="fa fa-chevron-left"></i> 常见的数据交互
+              <a href="/2019/01/01/快速搭建RN开发环境/" rel="next" title="快速搭建RN开发环境">
+                <i class="fa fa-chevron-left"></i> 快速搭建RN开发环境
               </a>
             
           </div>
@@ -456,8 +458,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/17/手动实现jquery/" rel="prev" title="手动实现jquery">
-                手动实现jquery <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/07/reactNative基础2/" rel="prev" title="reactNative基础2">
+                reactNative基础2 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法："><span class="nav-number">1.</span> <span class="nav-text">语法：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置组件"><span class="nav-number">1.</span> <span class="nav-text">内置组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#View"><span class="nav-number">1.1.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text"><span class="nav-number">1.2.</span> <span class="nav-text">Text</span></a></li></ol></li></ol></div>
             
 
           </div>
