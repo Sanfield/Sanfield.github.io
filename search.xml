@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[递归构造树形菜单]]></title>
+    <url>%2F2019%2F02%2F28%2F%E9%80%92%E5%BD%92%E6%9E%84%E9%80%A0%E6%A0%91%E5%BD%A2%E8%8F%9C%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[后台主要是在关系型数据库中拼接为树形的数据结构。递归遍历如下: 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160package com.merit.common;import com.alibaba.fastjson.JSONArray;import java.util.ArrayList;import java.util.List;public class TreeBuilder &#123; List&lt;Node&gt; nodes = new ArrayList&lt;&gt;(); public JSONArray buildTree(List&lt;Node&gt; nodes) &#123; TreeBuilder treeBuilder = new TreeBuilder(nodes); return treeBuilder.buildJSONTree(); &#125; public TreeBuilder() &#123; &#125; public TreeBuilder(List&lt;Node&gt; nodes) &#123; super(); this.nodes = nodes; &#125; // 构建JSON树形结构 public JSONArray buildJSONTree() &#123; List&lt;Node&gt; nodeTree = buildTree(); JSONArray jsonArray = JSONArray.parseArray(JSONArray.toJSONString(nodeTree)); return jsonArray; &#125; // 构建树形结构 public List&lt;Node&gt; buildTree() &#123; List&lt;Node&gt; treeNodes = new ArrayList&lt;&gt;(); List&lt;Node&gt; rootNodes = getRootNodes(); for (Node rootNode : rootNodes) &#123; buildChildNodes(rootNode); treeNodes.add(rootNode); &#125; return treeNodes; &#125; // 递归子节点 public void buildChildNodes(Node node) &#123; List&lt;Node&gt; children = getChildNodes(node); if (!children.isEmpty()) &#123; for (Node child : children) &#123; buildChildNodes(child); &#125; node.setNodes(children); &#125; &#125; // 获取父节点下所有的子节点 public List&lt;Node&gt; getChildNodes(Node pnode) &#123; List&lt;Node&gt; childNodes = new ArrayList&lt;&gt;(); for (Node n : nodes) &#123; if (pnode.getHref().equals(n.getSjdwbm())) &#123; childNodes.add(n); &#125; &#125; return childNodes; &#125; // 判断是否为根节点 public boolean rootNode(Node node) &#123; boolean isRootNode = true; for (Node n : nodes) &#123; if(node.getSjdwbm()!=null)&#123; if (node.getSjdwbm().equals(n.getHref())) &#123; isRootNode = false; break; &#125; &#125; &#125; return isRootNode; &#125; // 获取集合中所有的根节点 public List&lt;Node&gt; getRootNodes() &#123; List&lt;Node&gt; rootNodes = new ArrayList&lt;&gt;(); for (Node n : nodes) &#123; if (rootNode(n)) &#123; rootNodes.add(n); &#125; &#125; return rootNodes; &#125; public static class Node &#123; private String href; //单位编码 private String sjdwbm; //上级单位编码 private String text; //单位名称 private String dwlx;//单位类型 private String dwjb;//单位级别 private List&lt;Node&gt; nodes; public Node() &#123; &#125; public String getDwlx() &#123; return dwlx; &#125; public void setDwlx(String dwlx) &#123; this.dwlx = dwlx; &#125; public String getDwjb() &#123; return dwjb; &#125; public void setDwjb(String dwjb) &#123; this.dwjb = dwjb; &#125; public Node(String href, String sjdwbm, String text) &#123; super(); this.href = href; this.sjdwbm = sjdwbm; this.text = text; &#125; public String getHref() &#123; return href; &#125; public void setHref(String href) &#123; this.href = href; &#125; public String getSjdwbm() &#123; return sjdwbm; &#125; public void setSjdwbm(String sjdwbm) &#123; this.sjdwbm = sjdwbm; &#125; public String getText() &#123; return text; &#125; public void setText(String text) &#123; this.text = text; &#125; public List&lt;Node&gt; getNodes() &#123; return nodes; &#125; public void setNodes(List&lt;Node&gt; nodes) &#123; this.nodes = nodes; &#125; &#125;&#125; 在controller层的调用如下: 1234567891011 @ResponseBody @RequestMapping(&quot;/getTree&quot;) public JSONObject getTree()&#123;// 获取全部目录节点 List&lt;TreeBuilder.Node&gt; nodes = userService.selecTreeNode(); JSONObject josn = new JSONObject(); // 拼装树形json字符串 JSONArray str = new TreeBuilder().buildTree(nodes); josn.put(&quot;list&quot;,str); return josn; &#125;]]></content>
+      <categories>
+        <category>递归</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>递归</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[axios的配置和使用]]></title>
     <url>%2F2019%2F01%2F28%2Faxios%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[这几天大佬让我把项目的ajax全部换成axois，接到任务时，我内心深处第一反应是两个字**,因为由于历史问题…..。哎，程序员怎么能说不能，干吧。之前只是了解过，但是也没实际用过，趁着这次也用用。在网上找了找，发现并不复杂。来吧，照着官网来。 安装 npm install axios 引用 import axios from ‘axios’ 挂载在vue原型上 Vue.proptotype.$axios=axois; 调用12345this.$axios.get('xxxxx').then(res=&gt;&#123; //TODO&#125;).catch(err=&gt;console.log(err)); 到目前，我们的axios已经可以成功运行了，尝试发了一个请求，已经能接受到请求了。接下来就是 做一些利国利民的事情了。 设置基本路径 axios.defaults.baseURL=’http://sanfield.github.io&#39; 设置拦截器 请求发起之前 1234567891011// 定义拦截器// 1: 请求发起前显示loading open();Axios.interceptors.request.use(function(config) &#123; // 不变配置: 可变，可以设置公共的请求头操作 MintUI.Indicator.open(&#123; text: '玩儿命加载中...', spinnerType: 'fading-circle' &#125;); // console.log(config); return config; // config:&#123; headers&#125;&#125;) 接收到相应后123456789// 2: 响应回来后关闭loading close()Axios.interceptors.response.use(function(response) &#123; //reponse: &#123; config:&#123; &#125;,data:&#123;&#125; ,headers &#125; // 接收响应头或者响应体中的数据，保存起来，供请求的拦截器中使用头信息操作 MintUI.Indicator.close(); // console.log(response); return response;&#125;) 经过上面一系列操作，我们的axios已经可以进行生产使用了，好了我要挨个解决历史问题了。]]></content>
@@ -192,6 +204,53 @@
         <tag>ES6</tag>
         <tag>XHR</tag>
         <tag>AJAX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初识Spring-Eurka]]></title>
+    <url>%2F2018%2F07%2F08%2F%E5%88%9D%E8%AF%86Spring-Eurka%2F</url>
+    <content type="text"><![CDATA[服务治理是微服务中核心和基础的模块，主要用来实现给每个微服务的自动化注册与发现 服务注册：将自己的服务在注册中心进行登记（例如uap中把application.properties中 12345#------------------------------------------------注册中心配置--------------------------------------#注册中心地址eureka.client.serviceUrl.defaultZone=http://127.0.0.1:8761/eureka/#优先识别通过ip地址访问注册中心的请求？eureka.instance.preferIpAddress=true ） 服务发现 ：每当一个服务发起调用时，注册中心以某种轮训的策略取出一个位置来进行服务调用，这就后期牵扯到客服端的负载均衡 高可用的注册中心Eureka.client 的高可用实际上就是讲自己作为服务向其他服务中心注册自己，这样就可以形成一组相互注册的服务注册中心，实现服务清单互相同步，这样就构成了一个双节点的服务注册中心集群 123456eureka.instance.hostname=peer1eureka.client.serviceUrl.defaultZone=xxxx(另外一个注册中心的地址)在peer2 中eureka.instance.hostname=peer2eureka.client.serviceUrl.defaultZone=xxxx(另外一个注册中心的地址)]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[boostrap-tree的使用]]></title>
+    <url>%2F2018%2F05%2F30%2Fboostrap-tree%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[初始化树:12345678910var treeData= getTreeData();console.log(treeData);$(&apos;#treeview1&apos;).treeview(&#123; // backColor: &quot;#FFFFFF&quot;, color: &quot;#428bca&quot;, // enableLinks: true, showBorder:false, data: treeData&#125;); 其中 treeData必须的属性必须有text 要显示的内容,href 为主键,nodes: 是该列的所有子节点]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>boostrap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[boostrap-tree的默认选中]]></title>
+    <url>%2F2018%2F05%2F30%2Fboostrap-tree%E7%9A%84%E9%BB%98%E8%AE%A4%E9%80%89%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[1$(&apos;#searchTree&apos;).treeview(&apos;checkNode&apos;,Number($(&quot;#&quot;+id+&quot;&quot;).attr(&apos;data-nodeid&apos;)),&#123;silent:true&#125;); 这个idtreeview自动分配的id,不容易获得所以修改boostrap-treeviw的源码在bootstrap-treeview.js找到:1node.nodeId = _this.nodes.length; 添加: 12//自己添加的nodeId node.id=node.id; 第二步:找到: 1var treeItem = $(_this.template.item) 在对象里添加: 1.attr(&apos;id&apos;, node.id) 这样再次审查树的元素时，就会发现多了一个属性id]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>boostrap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[boosrtap-table动态设置高]]></title>
+    <url>%2F2018%2F05%2F28%2Fboosrtap-table%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E9%AB%98%2F</url>
+    <content type="text"><![CDATA[动态设置高，对不齐问题一般在使用BootstrapTable 插件的时候，我是不固定高度的，没有height属性时候的插件一切正常，表格对齐也没有问题。但是为了将页面撑开，使数据少的时候，页面不显得空荡，所以就固定了高度： height: $(window).height()*0.79 根据页面的大小进行动态变化。此时就会出现表格不对齐的现象，解决方法：打开bootstrap-table.js 找到 BootstrapTable.prototype.resetView方法，找到如下代码： 123456if (this.options.showHeader &amp;&amp; this.options.height) &#123; this.$tableHeader.show(); //注释掉下面两行 取消表头初始化解决表头和内容不对齐问题 //this.resetHeader(); //padding += this.$header.outerHeight();&#125;]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>boostrap</tag>
       </tags>
   </entry>
 </search>
