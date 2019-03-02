@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[web页面集成高德地图]]></title>
+    <url>%2F2019%2F03%2F02%2Fweb%E9%A1%B5%E9%9D%A2%E9%9B%86%E6%88%90%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%2F</url>
+    <content type="text"><![CDATA[今天因为领导角色用户自己手工收入位置不好校验正确性，并不友好。决定做一个类似于外卖定位的地图组建。 获取用户的输入，进行模糊匹配 在地图上定位，并标记 用户选区标记，返回位置坐标 保存到数据库 12345678910111213141516171819202122232425262728&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf-8"&gt; &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt; &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"&gt; &lt;title&gt;位置更新&lt;/title&gt; &lt;link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/&gt; &lt;script src="../jquery/jquery-3.3.1.js"&gt;&lt;/script&gt; &lt;script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.13&amp;key=自己的key&amp;plugin=AMap.Autocomplete,AMap.PlaceSearch"&gt;&lt;/script&gt; &lt;script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"&gt;&lt;/script&gt; &lt;script src="../js/map.js"&gt;&lt;/script&gt;&lt;style&gt; #map&#123; width: 500px; height: 300px; &#125;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;&lt;input type="text" id="tipinput" placeholder="请输入关键字"/&gt; &lt;input type="text" id="lnglat" placeholder=""/&gt; &lt;input type="text" id="address" placeholder=""/&gt;&lt;/div&gt;&lt;div id="map"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 页面主要是定义地图所装载的容器，引入高德地图所需的文件。js文件主要用来获取用户 数据，和获取用户标记事件 123456789101112131415161718192021222324252627$(function () &#123; //地图加载 var map = new AMap.Map("map", &#123; resizeEnable: true &#125;);//输入提示 var autoOptions = &#123; input: "tipinput" &#125;; var auto = new AMap.Autocomplete(autoOptions); var placeSearch = new AMap.PlaceSearch(&#123; map: map &#125;); //构造地点查询类 AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发 function select(e) &#123; placeSearch.setCity(e.poi.adcode); placeSearch.search(e.poi.name); //关键字查询查询 &#125;//点击事件 AMap.event.addListener(placeSearch, "markerClick", function(e) &#123; console.log(e.data.location);//当前marker的经纬度信息 document.getElementById("lnglat").value = e.data.location.lng + ',' + e.data.location.lat; console.log(e.data.address);//获取当前marker的具体地址信息 console.log(e.data);//则是包含所有的marker数据 document.getElementById("address").value = e.data.pname+e.data.cityname+e.data.adname+e.data.address+e.data.name; &#125;);&#125;);]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>地图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mysql表明大小写敏感问题]]></title>
     <url>%2F2019%2F02%2F28%2Fmysql%E8%A1%A8%E6%98%8E%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[mysql表名大小写敏感解决方法： 找到mysql配置文件 my.cnf 在[mysqld]节点下添加lower-case-table-names=0 重启mysql服务]]></content>
