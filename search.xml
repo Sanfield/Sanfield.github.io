@@ -241,6 +241,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[boostrap-table分页排序]]></title>
+    <url>%2F2018%2F06%2F01%2Fboostrap-table%E5%88%86%E9%A1%B5%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[boostrap-table分页有两种，一种是利用fommart函数的index参数，进行自增参数。这种的简单易操作，适用于序号仅表示行号的情况。 123456field: '',title: '序号',align:"center",formatter:function (value,row,index) &#123; return index+1;&#125; 但是在某些情况下可能需要分页后页码依然连续，这在boostrap-table本事是无法进行实现的，所以需要自定义方法。 首先当前序号=（pageNum-1）*pageSize+index $(‘#tableId’).bootstrapTable(‘getOptions’).pageSize 根据getOptions属性能获取到当前的pageSize，和pageNum；123456789101112&#123; field: 'number', title: '序号', width:5 , align:'center', switchable:false, formatter:function(value,row,index)&#123; //return index+1; //序号正序排序从1开始 var pageSize=$('#tableId').bootstrapTable('getOptions').pageSize;//通过表的#id 可以得到每页多少条 var pageNumber=$('#tableId').bootstrapTable('getOptions').pageNumber;//通过表的#id 可以得到当前第几页 return pageSize * (pageNumber - 1) + index + 1; //返回每条的序号： 每页条数 * （当前页 - 1 ）+ 序号 &#125;]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>boostrap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[boostrap-tree的使用]]></title>
     <url>%2F2018%2F05%2F30%2Fboostrap-tree%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[初始化树:12345678910var treeData= getTreeData();console.log(treeData);$(&apos;#treeview1&apos;).treeview(&#123; // backColor: &quot;#FFFFFF&quot;, color: &quot;#428bca&quot;, // enableLinks: true, showBorder:false, data: treeData&#125;); 其中 treeData必须的属性必须有text 要显示的内容,href 为主键,nodes: 是该列的所有子节点]]></content>

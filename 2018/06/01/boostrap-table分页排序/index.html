@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1$(&amp;apos;#searchTree&amp;apos;).treeview(&amp;apos;checkNode&amp;apos;,Number($(&amp;quot;#&amp;quot;+id+&amp;quot;&amp;quot;).attr(&amp;apos;data-nodeid&amp;apos;)),&amp;#123;silent:true&amp;#125;); 这个idtreeview自动分配的id,不容易获得所以修改boostrap-treevi">
+<meta name="description" content="boostrap-table分页有两种，一种是利用fommart函数的index参数，进行自增参数。这种的简单易操作，适用于序号仅表示行号的情况。 123456field: &apos;&apos;,title: &apos;序号&apos;,align:&quot;center&quot;,formatter:function (value,row,index) &amp;#123;    return index+1;&amp;#125;  但是在某些情况下可能需要">
 <meta name="keywords" content="js,boostrap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="boostrap-tree的默认选中">
-<meta property="og:url" content="http://yoursite.com/2018/05/30/boostrap-tree的默认选中/index.html">
+<meta property="og:title" content="boostrap-table分页排序">
+<meta property="og:url" content="http://yoursite.com/2018/06/01/boostrap-table分页排序/index.html">
 <meta property="og:site_name" content="Sanfield Blog">
-<meta property="og:description" content="1$(&amp;apos;#searchTree&amp;apos;).treeview(&amp;apos;checkNode&amp;apos;,Number($(&amp;quot;#&amp;quot;+id+&amp;quot;&amp;quot;).attr(&amp;apos;data-nodeid&amp;apos;)),&amp;#123;silent:true&amp;#125;); 这个idtreeview自动分配的id,不容易获得所以修改boostrap-treevi">
+<meta property="og:description" content="boostrap-table分页有两种，一种是利用fommart函数的index参数，进行自增参数。这种的简单易操作，适用于序号仅表示行号的情况。 123456field: &apos;&apos;,title: &apos;序号&apos;,align:&quot;center&quot;,formatter:function (value,row,index) &amp;#123;    return index+1;&amp;#125;  但是在某些情况下可能需要">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T14:48:52.380Z">
+<meta property="og:updated_time" content="2019-03-05T13:24:00.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="boostrap-tree的默认选中">
-<meta name="twitter:description" content="1$(&amp;apos;#searchTree&amp;apos;).treeview(&amp;apos;checkNode&amp;apos;,Number($(&amp;quot;#&amp;quot;+id+&amp;quot;&amp;quot;).attr(&amp;apos;data-nodeid&amp;apos;)),&amp;#123;silent:true&amp;#125;); 这个idtreeview自动分配的id,不容易获得所以修改boostrap-treevi">
+<meta name="twitter:title" content="boostrap-table分页排序">
+<meta name="twitter:description" content="boostrap-table分页有两种，一种是利用fommart函数的index参数，进行自增参数。这种的简单易操作，适用于序号仅表示行号的情况。 123456field: &apos;&apos;,title: &apos;序号&apos;,align:&quot;center&quot;,formatter:function (value,row,index) &amp;#123;    return index+1;&amp;#125;  但是在某些情况下可能需要">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/30/boostrap-tree的默认选中/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/01/boostrap-table分页排序/"/>
 
 
 
 
 
-  <title>boostrap-tree的默认选中 | Sanfield Blog</title>
+  <title>boostrap-table分页排序 | Sanfield Blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/30/boostrap-tree的默认选中/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/boostrap-table分页排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sanfield">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">boostrap-tree的默认选中</h1>
+          <h1 class="post-title" itemprop="name headline">boostrap-table分页排序</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T16:42:58+08:00">
-                2018-05-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T22:44:08+08:00">
+                2018-06-01
               </time>
             
 
@@ -367,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/30/boostrap-tree的默认选中/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/30/boostrap-tree的默认选中/" itemprop="commentCount"></span>
+                <a href="/2018/06/01/boostrap-table分页排序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/01/boostrap-table分页排序/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,15 +396,17 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#searchTree&apos;).treeview(&apos;checkNode&apos;,Number($(&quot;#&quot;+id+&quot;&quot;).attr(&apos;data-nodeid&apos;)),&#123;silent:true&#125;);</span><br></pre></td></tr></table></figure>
-<p>这个idtreeview自动分配的id,不容易获得所以修改boostrap-treeviw的源码<br>在bootstrap-treeview.js找到:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node.nodeId = _this.nodes.length;</span><br></pre></td></tr></table></figure></p>
-<p>添加:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//自己添加的nodeId</span><br><span class="line">   node.id=node.id;</span><br></pre></td></tr></table></figure>
-<p>第二步:<br>找到:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var treeItem = $(_this.template.item)</span><br></pre></td></tr></table></figure>
-<p>在对象里添加:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.attr(&apos;id&apos;, node.id)</span><br></pre></td></tr></table></figure>
-<p>这样再次审查树的元素时，就会发现多了一个属性id</p>
+        <ul>
+<li><p>boostrap-table分页有两种，一种是利用fommart函数的index参数，进行自增参数。这种的简单易操作，适用于序号仅表示行号的情况。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">field: <span class="string">''</span>,</span><br><span class="line">title: <span class="string">'序号'</span>,</span><br><span class="line">align:<span class="string">"center"</span>,</span><br><span class="line">formatter:<span class="function"><span class="keyword">function</span> (<span class="params">value,row,index</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> index+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>但是在某些情况下可能需要分页后页码依然连续，这在boostrap-table本事是无法进行实现的，所以需要自定义方法。</p>
+</li>
+</ul>
+<ol>
+<li>首先当前序号=（pageNum-1）*pageSize+index</li>
+<li>$(‘#tableId’).bootstrapTable(‘getOptions’).pageSize 根据getOptions属性能获取到当前的pageSize，和pageNum；<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">            field: <span class="string">'number'</span>,</span><br><span class="line">            title: <span class="string">'序号'</span>,</span><br><span class="line">            width:<span class="number">5</span> ,</span><br><span class="line">            align:<span class="string">'center'</span>,</span><br><span class="line">            switchable:<span class="literal">false</span>,</span><br><span class="line">            formatter:<span class="function"><span class="keyword">function</span>(<span class="params">value,row,index</span>)</span>&#123;</span><br><span class="line">                <span class="comment">//return index+1; //序号正序排序从1开始</span></span><br><span class="line">                <span class="keyword">var</span> pageSize=$(<span class="string">'#tableId'</span>).bootstrapTable(<span class="string">'getOptions'</span>).pageSize;<span class="comment">//通过表的#id 可以得到每页多少条</span></span><br><span class="line">                <span class="keyword">var</span> pageNumber=$(<span class="string">'#tableId'</span>).bootstrapTable(<span class="string">'getOptions'</span>).pageNumber;<span class="comment">//通过表的#id 可以得到当前第几页</span></span><br><span class="line">                <span class="keyword">return</span> pageSize * (pageNumber - <span class="number">1</span>) + index + <span class="number">1</span>;    <span class="comment">//返回每条的序号： 每页条数 * （当前页 - 1 ）+ 序号</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -437,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/28/boosrtap-table动态设置高/" rel="next" title="boosrtap-table动态设置高">
-                <i class="fa fa-chevron-left"></i> boosrtap-table动态设置高
+              <a href="/2018/05/30/boostrap-tree的使用/" rel="next" title="boostrap-tree的使用">
+                <i class="fa fa-chevron-left"></i> boostrap-tree的使用
               </a>
             
           </div>
@@ -447,8 +449,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/30/boostrap-tree的使用/" rel="prev" title="boostrap-tree的使用">
-                boostrap-tree的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/08/初识Spring-Eurka/" rel="prev" title="初识Spring-Eurka">
+                初识Spring-Eurka <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
