@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[旋转数组]]></title>
+    <url>%2F2019%2F03%2F12%2F%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718class Solution &#123; public void rotate(int[] nums, int k) &#123; int count=k%nums.length; int limit= nums.length-count; reverse(nums,0,limit-1); reverse(nums,limit,nums.length-1); reverse(nums,0,nums.length-1); &#125; public void reverse(int[] arr,int st,int end)&#123; while(st&lt;end)&#123; int temp=arr[st]; arr[st]=arr[end]; arr[end]=temp; st++; end--; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[http头总结]]></title>
     <url>%2F2019%2F03%2F05%2Fhttp%E5%A4%B4%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[Expires 相应头包含日期/时间，即在此之后，响应过气（如果有cache-controle响应头设置了‘max-age’或者‘s-max-age’指令，那么Expires被忽略） Date 通用首部，报文的创建时间和日期 Age消息头包含消息对象在缓存中存贮的时长，以秒为单位 IF-Modified-Since 是一个条件请求首部，服务器只在请求资源在给定的日期时间之后对内容进行修改的情况下才将资源返回，状态码为200。如果请求资源从那时起未经修改，那么返回一个不带有消息主体的304相应，而在Last-Modified首部中会有上次修改时间，不同于IF-Unmodified-Since，if-Modified-Since 只能用在GET和HEAD请求中。与IF-None-Match一同出现时，IF-Modified-Since会被忽略，除非服务器不支持IF-None-Match DNT 0:用户愿意目标站点追踪用户个人信息;1:用户不愿意目标站点追踪用户个人信息 Cache-Control控制缓存 缓存请求指令 缓存响应指令 Transfer-Encoding 用于指定传输方法 chunked 数据以分块的形式发送 compress (LZW)压缩算法 deflate 采用zlib结构和deflate压缩算法 gzip gip压缩 identity 自身（未经压缩和修改） ETag 资源标记的版本，类似于签名，以便客户端使用缓存还是更新 X-Fframe-Option 三个值 Deny 不允许在fram中展示 sameOrigin 相同域名页面的frame中展示 allow-from uri 表示页面可以在指定来源的fram中展示]]></content>
